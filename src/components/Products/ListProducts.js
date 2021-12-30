@@ -1,4 +1,4 @@
-import JsonProducts from '../api/products.json'
+import JsonProducts from '../../api/products.json'
 import { Product } from './Product';
 import { Row } from 'react-bootstrap';
 

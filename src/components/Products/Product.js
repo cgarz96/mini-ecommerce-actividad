@@ -1,5 +1,5 @@
 import { Col, Row, Button, Badge} from "react-bootstrap";
-import "../assets/css/styles.css";
+import "../../assets/css/styles.css";
 export const Product = ({item}) => {
     const {title,price,image,description}= item
     return(
