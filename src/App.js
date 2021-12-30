@@ -7,11 +7,13 @@ import { AlertProduct } from "./components/Products/AlertProducts";
 
 function App() {
   return (
-    <Container >
+    <>
       <Header/>
-      <AlertProduct />
-      <ListProducts/>
-    </Container>
+      <Container >
+        <AlertProduct />
+        <ListProducts/>
+      </Container>
+    </>
   );
 }
 

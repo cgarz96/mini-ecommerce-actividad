@@ -2,6 +2,7 @@ import React from "react";
 import { Row,Col } from "react-bootstrap";
 import { Navbar, Container } from "react-bootstrap";
 import logo from '../logo.svg'
+import { ShoppingCart } from "./ShoppingCart/ShoppingCart";
 
 const style = {
     marginBottom: '30px'
@@ -21,6 +22,7 @@ export const Header = () => {
                     />{' '}
                 Mini Ecommerce
                 </Navbar.Brand>
+                <ShoppingCart />
             </Container>
         </Navbar>
     )
