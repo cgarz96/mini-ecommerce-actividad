@@ -1,8 +1,17 @@
 import { Col, Row, Button, Badge} from "react-bootstrap";
 import "../../assets/css/styles.css";
 import { saveLastInterestProduct } from "../../app/services/storageServices";
+import db from '../../app/db/db';
+
 export const Product = ({item}) => {
-    const {title,price,image,description}= item
+    const {title,price,image,description}= item;
+    const addProductToCart = ({title, price, category}) => {
+        db.cart.add({
+          title: title,
+          price: price,
+          category: category
+        })
+    }
     return(
  
         <Col xs={12} md={3}className="border-card"  >
@@ -27,7 +36,7 @@ export const Product = ({item}) => {
         </Row>
         <Row>
         <Col xs={12}>
-            <Button variant="warning" className="m-1" >
+            <Button variant="warning" className="m-1" onClick={() => addProductToCart(item) } >
              <Badge bg="secondary">🛒Agregar al carrito</Badge>
             <span className="visually-hidden"> </span>
             </Button>
