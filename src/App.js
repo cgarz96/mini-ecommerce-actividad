@@ -1,18 +1,20 @@
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Container } from "react-bootstrap";
+import { Route,Routes } from "react-router-dom";
 import {Header} from "./components/Header";
-import {ListProducts} from './components/Products/ListProducts'
-import { AlertProduct } from "./components/Products/AlertProducts";
+import { Home } from './views/Home'
+import { Product } from './views/Product'
 
 
 function App() {
   return (
     <>
       <Header/>
-      <Container >
-        <AlertProduct />
-        <ListProducts/>
-      </Container>
+      <Routes>
+        <Route path={"/"}  element={<Home />} />
+        <Route path={"/product/:id"}  element={<Product />} />
+        <Route path="*" element={ <div>404 NOT FOUND</div>} />
+      </Routes>
+      
     </>
   );
 }
