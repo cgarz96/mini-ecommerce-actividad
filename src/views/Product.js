@@ -15,7 +15,14 @@ export const Product = (props,{match}) =>{
 
     return(
         <Container >
-            <h1>Producto { productDetail && JSON.stringify(productDetail)}</h1>
+            {/* productDetail && JSON.stringify(productDetail)*/}
+            {productDetail ?
+            <ul>
+                <li>Numero de producto: {productDetail.id}</li>
+                <li>Nombre: {productDetail.title}</li>
+                <li>Categoria: {productDetail.category}</li>
+                <li>Precio: $ {productDetail.price}</li>
+            </ul>:<h1>Este producto no existe</h1>}
         </Container>
     )
 }
