@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { NavDropdown, Nav, Navbar } from 'react-bootstrap'
 import db from "../../app/db/db";
 import { ShoppingCartItem } from "./ShoppingCartItem";
+import { Link } from "react-router-dom";
 
 export const ShoppingCart = () => {
 
@@ -41,7 +42,7 @@ export const ShoppingCart = () => {
               return <ShoppingCartItem key={product.id} item={product} />
             })}
             <NavDropdown.Divider />
-            <NavDropdown.Item>Total: ${totalPrice} </NavDropdown.Item>
+            <NavDropdown.Item><Link to={"/purchase"} >Total: ${totalPrice}</Link> </NavDropdown.Item>
           </NavDropdown>
         </Nav>
       </Navbar.Collapse>
