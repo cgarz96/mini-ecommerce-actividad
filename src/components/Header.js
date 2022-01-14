@@ -4,6 +4,7 @@ import { Navbar, Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import logo from '../logo.svg'
 import { ShoppingCart } from "./ShoppingCart/ShoppingCart";
+import { getProductById } from '../app/services/productServices';
 
 const style = {
     marginBottom: '30px'

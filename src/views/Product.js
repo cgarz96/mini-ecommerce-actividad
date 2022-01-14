@@ -1,14 +1,21 @@
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import { Container } from "react-bootstrap";
 import { useParams } from "react-router-dom";
+import { getProductById } from '../app/services/productServices';
 
+export const Product = (props,{match}) =>{
+    const { id } = useParams();
+    const [productDetail, setProductDetail] = useState(null);
 
-export const Product = (props) =>{
-    let { id } = useParams();
-    const [productId,setProductId]=useState(null)
+    useEffect(() => {
+        getProductById(id)
+            .then((productFromDB) => setProductDetail(productFromDB))
+            .catch((err) => console.log(err))
+    },[id]);
+
     return(
         <Container >
-            <h1>Producto {id}</h1>
+            <h1>Producto { productDetail && JSON.stringify(productDetail)}</h1>
         </Container>
     )
 }
